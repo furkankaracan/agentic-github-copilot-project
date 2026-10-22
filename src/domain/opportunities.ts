@@ -117,6 +117,6 @@ export function transitionOpportunity(
   return {
     ...opportunity,
     stage: to,
-    ...(isClosedStage(to) ? { closedAt: ctx.now() } : {}),
+    ...(to === OpportunityStage.ClosedWon ? { closedAt: ctx.now() } : {}),
   };
 }
