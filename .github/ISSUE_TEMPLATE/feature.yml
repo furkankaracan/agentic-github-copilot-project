@@ -1,0 +1,44 @@
+name: Feature request
+description: A new capability, written so a Copilot agent can plan and build it.
+title: "[Feature]: "
+labels: ["feature"]
+body:
+  - type: textarea
+    id: story
+    attributes:
+      label: User story
+      description: "As a <role>, I want <capability> so that <benefit>."
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Numbered, each one testable. Name exact button labels and rules.
+      placeholder: |
+        1. …
+        2. …
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      multiple: true
+      options:
+        - Accounts
+        - Contacts
+        - Opportunities
+        - Orders
+        - Dashboard
+    validations:
+      required: true
+  - type: textarea
+    id: out-of-scope
+    attributes:
+      label: Out of scope
+  - type: textarea
+    id: demo
+    attributes:
+      label: Demo data
+      description: Which seed records (e.g. opp-008, ord-002) show the change on http://localhost:5173.

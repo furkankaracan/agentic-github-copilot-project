@@ -1,0 +1,35 @@
+name: Bug report
+description: Something behaves differently from the spec or the user's expectation.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Use seed data so anyone can reproduce on a fresh reload.
+      placeholder: |
+        1. Open http://localhost:5173/…
+        2. …
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+      description: Cite the rule if you know it (instruction file or skill section).
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      placeholder: |
+        1. A failing test reproduces the bug before the fix.
+        2. …

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "hooks": {
+    "sessionStart": [
+      {
+        "type": "command",
+        "command": "node .github/hooks/scripts/session-start.mjs",
+        "timeoutSec": 10
+      }
+    ],
+    "preToolUse": [
+      {
+        "type": "command",
+        "command": "node .github/hooks/scripts/pre-tool-use.mjs",
+        "timeoutSec": 10
+      }
+    ],
+    "postToolUse": [
+      {
+        "type": "command",
+        "command": "node .github/hooks/scripts/audit-log.mjs",
+        "timeoutSec": 10
+      }
+    ]
+  }
+}

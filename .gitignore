@@ -1,0 +1,16 @@
+node_modules
+dist
+coverage
+*.local
+.env
+.env.*
+!.env.example
+.DS_Store
+*.log
+.vite
+
+# Hook audit trail written by .github/hooks/scripts/audit-log.mjs (local, per developer)
+.copilot-audit/
+
+# Copilot CLI personal settings (permissions/approvals are per-developer, not team policy)
+.github/copilot/settings.local.json
