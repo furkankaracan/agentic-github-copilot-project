@@ -63,7 +63,7 @@ Apply only the sections whose files changed. Each item cites its source rule.
 | # | Item | Rule |
 | --- | --- | --- |
 | G1 | No widened `tools` lists without justification in the PR body | least privilege |
-| G2 | Hooks not weakened; CODEOWNERS approval required | CODEOWNERS |
+| G2 | Hooks not weakened; code owner reviewed the change | CODEOWNERS |
 
 ## H. Scope & hygiene
 

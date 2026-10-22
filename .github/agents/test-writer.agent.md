@@ -43,3 +43,4 @@ Do **not** fix production code and do **not** weaken the test. Write the test ag
 1. Every test added, one line each: scenario → expectation.
 2. `npm run verify` summary (and coverage delta if you ran `npm run test:coverage`).
 3. **Production-code findings** (bugs, untestable branches, spec mismatches) as a separate section.
+4. The pull request URL — or, inside a `feature-lead` pipeline, "ready for PR" until the lead asks you to open it.

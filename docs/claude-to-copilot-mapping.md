@@ -100,7 +100,8 @@ Frontmatter that does **not** carry over:
 | "Never post to ADO" in the agent prompt | `pr-reviewer` has no edit tool + `reviewer-readonly.mjs` allowlist + read-only GitHub MCP |
 | SonarQube MCP with `SONARQUBE_READ_ONLY=true` | GitHub MCP at `/mcp/readonly`; cloud agent's GitHub MCP is read-only by default |
 | — | Per-developer CLI approvals still exist (`--allow-tool`, `--deny-tool`) but are personal; team policy lives in hooks |
-| — | `CODEOWNERS` on `.github/agents|instructions|skills|hooks/` |
+| — | `CODEOWNERS` on `.github/agents|instructions|skills|hooks/` (auto-requests review; enforceable with a ruleset when the team has a second reviewer) |
+| — | **Agents always deliver through a PR** (`copilot-instructions.md` › Git workflow), even though `main` itself is unprotected for humans |
 | — | The guardrails have their own tests (`npm run test:hooks`) |
 
 ### Handoffs

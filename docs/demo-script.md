@@ -23,7 +23,7 @@ The app runs locally on `http://localhost:5173`; the backlog is in GitHub Issues
 ## T-1 day
 
 - [ ] `npm ci`, `npm run verify`, `npm run test:hooks` green.
-- [ ] Repo settings: Copilot cloud agent enabled; branch ruleset on `main` (PR required, Code Owners review, `CI` check).
+- [ ] Repo settings: Copilot cloud agent enabled. `main` is intentionally unprotected (humans push directly; agents must open PRs).
 - [ ] Actions → **Copilot Setup Steps** → *Run workflow* → green.
 - [ ] VS Code: signed in to Copilot, workspace trusted, `github` MCP server started (`.vscode/mcp.json`) and authenticated, `chat.useHooks` on.
 - [ ] Copilot CLI installed and logged in (`copilot --version`).

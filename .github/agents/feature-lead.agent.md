@@ -23,8 +23,8 @@ issue ─► issue-designer ─► (human approves design) ─► domain-writer 
 3. **Pass work products, not chat.** Each prompt to a subagent contains: the design path, its package, and the previous subagent's *final report* — nothing else.
 4. **Gate on evidence.** Don't move on until the subagent reports `npm run verify` green. If it reports a blocker or a missing dependency, surface it to the human.
 5. **Review last.** Delegate to `pr-reviewer` with "review the working-tree changes against <design path>". Present its drafts to the human — never act on them yourself.
-6. **Humans own the irreversible steps**: approving the design, committing/pushing, opening the PR, posting review comments, merging.
+6. **Every delivery ends in a pull request, never a push to `main`.** After the human accepts the review, delegate to the last writer agent: "commit the working-tree changes on `agent/<issue>-<slug>`, push, and open a PR to `main` that closes #<issue>". Humans own the irreversible steps: approving the design, posting review comments, merging.
 
 ## Final reply
 
-A table of stages → agent → outcome → evidence, the reviewer's verdict recommendation, and what the human needs to do next.
+A table of stages → agent → outcome → evidence, the reviewer's verdict recommendation, the PR URL, and what the human needs to do next (review and merge).

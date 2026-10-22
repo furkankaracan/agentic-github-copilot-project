@@ -10,4 +10,5 @@ Deliver GitHub issue #${input:issue:issue number} end to end.
 - Start with `issue-designer`. Show me the breakdown and open questions, then **wait for my approval**.
 - After approval, run `domain-writer` then `ui-writer` (only the packages the design lists), then `pr-reviewer` on the working-tree changes.
 - Stop and ask me whenever a subagent reports a blocker, a missing dependency, or a failing `npm run verify`.
-- Finish with the stage table and what I need to do next (commit, push, open the PR).
+- After I accept the review, have the last writer agent commit on an `agent/` branch, push it and open the pull request — never push to `main`.
+- Finish with the stage table and the PR URL.
