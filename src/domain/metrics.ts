@@ -5,7 +5,7 @@ import { OpportunityStage, type Opportunity } from './types';
 
 export function getOpenPipelineValue(opportunities: readonly Opportunity[]): number {
   return opportunities
-    .filter((o) => o.stage !== OpportunityStage.ClosedWon)
+    .filter((o) => OPEN_STAGES.includes(o.stage))
     .reduce((sum, o) => sum + o.amount, 0);
 }
 
