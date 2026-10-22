@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { getWinRate, getWonRevenue, summarizeOpenPipeline } from './metrics';
+import { getOpenPipelineValue, getWinRate, getWonRevenue, summarizeOpenPipeline } from './metrics';
 import { OpportunityStage, type Opportunity } from './types';
 
 function opp(stage: OpportunityStage, amount: number): Opportunity {
@@ -23,6 +23,17 @@ const pipeline: Opportunity[] = [
   opp(OpportunityStage.ClosedWon, 300),
   opp(OpportunityStage.ClosedLost, 1000),
 ];
+
+describe('getOpenPipelineValue', () => {
+  it('sums only open-stage amounts, excluding ClosedWon and ClosedLost', () => {
+    expect(getOpenPipelineValue(pipeline)).toBe(130);
+  });
+
+  it('equals the sum of the open pipeline by stage summary', () => {
+    const byStage = summarizeOpenPipeline(pipeline).reduce((sum, row) => sum + row.amount, 0);
+    expect(getOpenPipelineValue(pipeline)).toBe(byStage);
+  });
+});
 
 describe('getWonRevenue', () => {
   it('sums only ClosedWon amounts', () => {
