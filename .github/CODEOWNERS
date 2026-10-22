@@ -1,5 +1,6 @@
-# "Protect the protectors": changes to agent configuration and guardrails need a code-owner review.
-# Enable "Require review from Code Owners" in the branch ruleset for main.
+# "Protect the protectors": PRs that change agent configuration or guardrails automatically request
+# a code-owner review. main has no branch protection on purpose (humans push directly), so this is
+# advisory; agents are held to pull requests by .github/copilot-instructions.md › Git workflow.
 
 /.github/copilot-instructions.md  @furkankaracan
 /.github/instructions/            @furkankaracan

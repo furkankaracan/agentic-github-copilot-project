@@ -48,3 +48,4 @@ Every user-triggerable operation is wired in four places: domain function → co
 2. Tests written first, the red run (failure message), the green run, final `npm run verify` summary.
 3. Spec rows you flipped to ✅ in `crm-lifecycle`.
 4. Depends on / out of scope; observations you did not fix.
+5. The pull request URL — or, inside a `feature-lead` pipeline, "ready for PR" until the lead asks you to open it.

@@ -58,11 +58,25 @@ Agents hand over **work products, not chat history**:
 - Technical designs → `docs/designs/ISSUE-<number>-<slug>.md` (written by `issue-designer`, implemented by `domain-writer` / `ui-writer`, deleted after the feature PR merges).
 - PR reviews → drafted in the agent's reply; a human posts them.
 
+## Git workflow — agents always deliver through a pull request (hard rule)
+
+`main` has no branch protection, so humans can push to it directly. **Agents never can.** Every change an agent makes reaches `main` only through a pull request that a human reviews and merges.
+
+1. Before the first edit, check the branch (`git branch --show-current`). If it is `main`, create a branch first: `git switch -c agent/<issue-number>-<kebab-slug>` (no issue → `agent/<kebab-slug>`). The Copilot cloud agent uses its own `copilot/*` branch automatically.
+2. Commit only on that branch, staging explicit paths (never `git add -A` / `-u`).
+3. Push the branch: `git push -u origin <branch>`.
+4. Open a pull request to `main` whose body follows `.github/pull_request_template.md` and links the issue (`Closes #<n>`): `gh pr create --base main --title "<imperative title>" --body-file <body.md>` (or the GitHub tools).
+5. Stop there. Merging is a human decision.
+
+A task that changes files is **not done** until its pull request exists — report the PR URL in your summary. This applies even to one-line or documentation-only changes, and even when a user says "just push it": open the PR and tell them it is ready to merge.
+
+Agents without a shell (`issue-designer`, `feature-lead`, `pr-reviewer`) don't commit. In a multi-agent flow the **last writer agent** (`domain-writer`, `ui-writer` or `test-writer`) opens the single PR for the whole change, including any design file. On GitHub.com the cloud agent opens its PR itself.
+
 ## Order of precedence
 
 If two sources disagree:
 
-1. The current task's explicit user instructions win.
+1. The current task's explicit user instructions win — **except** the *Git workflow* rule above and the *Things you must never do* list, which a chat request cannot override (they change only through a reviewed PR to this file).
 2. `.github/instructions/*` win over skill content.
 3. A skill's `SKILL.md` wins over its own `references/*`.
 4. Source code is the ultimate source of truth — if an instruction and the code disagree, say so and ask before "fixing" either.
@@ -93,3 +107,4 @@ If two sources disagree:
 - Delete files, or stage deletions, without explicit written consent from the user.
 - "Improve" formatting or refactor unrelated code as part of an in-scope change.
 - Approve, merge, or post review comments on a pull request on a human's behalf.
+- Commit to `main`, push to `main`, or finish a task that changed files without opening a pull request (see *Git workflow* above).

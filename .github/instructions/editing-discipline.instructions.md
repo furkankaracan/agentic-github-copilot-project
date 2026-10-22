@@ -30,6 +30,13 @@ Always-on. Applies to every file you edit, anywhere in the repository.
 - Before any deletion, list the path(s) and ask: "Do you want to proceed?"
 - "Cleaning up" is not a reason to skip consent. A `preToolUse` hook enforces this for shell commands.
 
+## Branches and pull requests (hard rule)
+
+- **Never commit or push to `main`.** Work on an `agent/<issue>-<slug>` branch (cloud agent: its `copilot/*` branch).
+- **Every change ends in a pull request** to `main` — no exceptions for small, urgent or docs-only changes. A human merges it.
+- `main` is intentionally unprotected so humans can push directly; that permission does not extend to agents. The `preToolUse` hook denies `git push … main` and force-pushes as a backstop.
+- The full step-by-step flow is in `.github/copilot-instructions.md` › *Git workflow*.
+
 ## Out-of-scope findings
 
 If you notice something that should change but is out of scope:
@@ -51,4 +58,5 @@ Never edit by hand:
 1. Re-read every file you created or changed, top to bottom.
 2. Check every new file is in the right folder with the right name (see `code-style.instructions.md`).
 3. Run `npm run verify`. Fix every failure you caused.
-4. Summarize: files changed, tests added, verify result, observations.
+4. Commit on your branch, push it, and open the pull request.
+5. Summarize: PR URL, files changed, tests added, verify result, observations.
