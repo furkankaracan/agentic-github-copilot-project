@@ -28,7 +28,7 @@ Static seed data, no backend, no database. Every change lives in memory and rese
 | Area | Built | Backlog (issues) |
 | --- | --- | --- |
 | Accounts | List with search, detail, create | Edit, delete with guard |
-| Contacts | List, create (linked to account) | Search/filter, detail + edit, domain tests |
+| Contacts | List with search and account filter, create (linked to account) | Detail + edit, broader domain tests |
 | Opportunities | List, detail, create, stage pipeline with state machine | Loss reason, stage filter, weighted forecast |
 | Orders | Create from won opportunity, list, detail | Status lifecycle (submit → fulfil → invoice / cancel), line editing |
 | Dashboard | Pipeline, won revenue, win rate, closing next, latest orders | **Bug:** open pipeline includes lost deals |

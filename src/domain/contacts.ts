@@ -29,6 +29,17 @@ export function contactsForAccount(contacts: readonly Contact[], accountId: stri
   return contacts.filter((c) => c.accountId === accountId);
 }
 
+export function searchContacts(contacts: readonly Contact[], query: string): Contact[] {
+  const q = query.trim().toLowerCase();
+  if (!q) return [...contacts];
+  return contacts.filter(
+    (c) =>
+      c.firstName.toLowerCase().includes(q) ||
+      c.lastName.toLowerCase().includes(q) ||
+      c.email.toLowerCase().includes(q),
+  );
+}
+
 /**
  * Creates a contact under an existing account. Email addresses are unique across all contacts.
  */
