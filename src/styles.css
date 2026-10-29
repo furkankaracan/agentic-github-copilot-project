@@ -324,6 +324,21 @@ h2 {
   max-inline-size: 22rem;
 }
 
+.contacts-toolbar {
+  flex-wrap: wrap;
+  max-inline-size: calc(100vw - 2 * var(--space-4));
+}
+
+.contacts-toolbar .input {
+  flex: 1 1 16rem;
+  min-inline-size: 0;
+  max-inline-size: 22rem;
+}
+
+.contacts-toolbar .muted {
+  white-space: nowrap;
+}
+
 /* ---------- Tables ---------- */
 
 .table {
