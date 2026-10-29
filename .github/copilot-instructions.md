@@ -58,6 +58,16 @@ Agents hand over **work products, not chat history**:
 - Technical designs → `docs/designs/ISSUE-<number>-<slug>.md` (written by `issue-designer`, implemented by `domain-writer` / `ui-writer`, deleted after the feature PR merges).
 - PR reviews → drafted in the agent's reply; a human posts them.
 
+### Session plans blocked by hooks
+
+If a repository hook blocks saving a session plan (such as `plan.md`) outside the repository:
+
+- Leave the hooks unchanged. Do not bypass the restriction, retry the write through another tool, or ask the user to relax the guardrail.
+- Use this default without asking the user to choose a destination: if the task has an existing GitHub issue, post the complete plan as a comment on that issue and return the comment link.
+- If there is no existing issue, include the complete plan in the chat response. Do not create an issue just to store a plan.
+- If posting the comment fails, report the failure explicitly and include the complete plan in chat instead.
+- This fallback does not replace required technical designs under `docs/designs/`. If a higher-priority workflow strictly requires the blocked local session file, report that requirement as unmet and stop that workflow rather than claiming the fallback satisfies it.
+
 ## Git workflow — agents always deliver through a pull request (hard rule)
 
 `main` has no branch protection, so humans can push to it directly. **Agents never can.** Every change an agent makes reaches `main` only through a pull request that a human reviews and merges.
