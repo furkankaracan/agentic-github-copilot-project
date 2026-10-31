@@ -64,6 +64,6 @@ docs/designs/                      # handoff artifacts written by issue-designer
 
 ## One-time repository settings for the demo
 
-1. **Copilot cloud agent** enabled for the repository (Settings → Copilot → Cloud agent).
+1. Optional: **Copilot cloud agent** enabled for the repository (Settings → Copilot → Cloud agent).
 2. **No branch protection on `main`, on purpose**: humans may push directly. Agents may not — `.github/copilot-instructions.md` › *Git workflow* makes every agent change go through a pull request, and the `preToolUse` hook denies `git push … main`. `CODEOWNERS` auto-requests your review on PRs that touch the agent configuration.
 3. Optional: **Copilot code review** on pull requests, and **Copilot Memory** for the repository.
