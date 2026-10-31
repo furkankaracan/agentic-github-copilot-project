@@ -42,5 +42,5 @@ Stages and statuses change **only** through a transition table + transition func
 ## Seed data (`src/data/seed.ts`)
 
 - It is the demo dataset — treat it as a fixture snapshot.
-- You may **add** records or **add optional fields** when a feature needs them. Never delete, renumber or change the stage/status of existing records: tests and the live-demo script depend on `acc-001…acc-007`, `con-001…con-011`, `opp-001…opp-012`, `ord-001…ord-002`.
+- You may **add** records or **add optional fields** when a feature needs them. Never delete, renumber or change the stage/status of existing records: tests and learning exercises depend on `acc-001…acc-007`, `con-001…con-011`, `opp-001…opp-012`, `ord-001…ord-002`.
 - A new required field on a type means every seed record needs a value — prefer optional fields.

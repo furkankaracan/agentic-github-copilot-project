@@ -49,7 +49,7 @@ Save as `docs/designs/ISSUE-<number>-<kebab-slug>.md`. Plain sentences, no fille
 
 <Numbered. For each: the question, who should answer, and the assumption taken if unanswered. "None — the issue was clear." if empty.>
 
-## Demo script
+## Manual verification
 
 <3–6 concrete steps on http://localhost:5173 using seed ids that prove the feature works.>
 ```

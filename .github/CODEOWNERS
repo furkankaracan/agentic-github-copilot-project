@@ -1,12 +1,12 @@
-# "Protect the protectors": PRs that change agent configuration or guardrails automatically request
-# a code-owner review. main has no branch protection on purpose (humans push directly), so this is
-# advisory; agents are held to pull requests by .github/copilot-instructions.md › Git workflow.
+# Owner-neutral template: uncomment entries and replace @your-team with maintainers of your fork.
+# Active entries request review for changes to agent configuration and guardrails.
+# Until configured, this file does not request code-owner reviews. Agents must still use pull requests.
 
-/.github/copilot-instructions.md  @furkankaracan
-/.github/instructions/            @furkankaracan
-/.github/skills/                  @furkankaracan
-/.github/agents/                  @furkankaracan
-/.github/prompts/                 @furkankaracan
-/.github/hooks/                   @furkankaracan
-/.github/workflows/               @furkankaracan
-/.github/CODEOWNERS               @furkankaracan
+# /.github/copilot-instructions.md  @your-team
+# /.github/instructions/            @your-team
+# /.github/skills/                  @your-team
+# /.github/agents/                  @your-team
+# /.github/prompts/                 @your-team
+# /.github/hooks/                   @your-team
+# /.github/workflows/               @your-team
+# /.github/CODEOWNERS               @your-team

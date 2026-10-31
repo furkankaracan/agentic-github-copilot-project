@@ -40,5 +40,5 @@ body:
   - type: textarea
     id: demo
     attributes:
-      label: Demo data
+      label: Sample data
       description: Which seed records (e.g. opp-008, ord-002) show the change on http://localhost:5173.
