@@ -21,6 +21,22 @@ describe('Contacts', () => {
     expect(screen.getByRole('link', { name: 'New contact' })).toHaveAttribute('href', '/contacts/new');
   });
 
+  it('shows phone numbers or a dash in the Phone column after Email', () => {
+    renderApp({ route: '/contacts' });
+    const table = within(screen.getByRole('table'));
+
+    expect(table.getAllByRole('columnheader').map((header) => header.textContent)).toEqual([
+      'Name', 'Account', 'Job title', 'Email', 'Phone',
+    ]);
+
+    const populatedRow = within(table.getByRole('row', { name: /elif.yilmaz@northwind.example/ }));
+    const missingRow = within(table.getByRole('row', { name: /can.demir@northwind.example/ }));
+
+    expect(populatedRow.getAllByRole('cell')[4]).toHaveTextContent('+90 212 555 0101');
+    expect(missingRow.getAllByRole('cell')[4]).toHaveTextContent('—');
+    expect(populatedRow.queryByRole('link', { name: '+90 212 555 0101' })).not.toBeInTheDocument();
+  });
+
   it.each([
     ['  lEnA  ', ['Lena Schmidt']],
     ['WEBER', ['Jonas Weber']],

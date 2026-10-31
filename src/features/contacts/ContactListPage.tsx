@@ -74,6 +74,7 @@ export function ContactListPage() {
               <th scope="col">Account</th>
               <th scope="col">Job title</th>
               <th scope="col">Email</th>
+              <th scope="col">Phone</th>
             </tr>
           </thead>
           <tbody>
@@ -87,6 +88,7 @@ export function ContactListPage() {
                 <td>
                   <a href={`mailto:${c.email}`}>{c.email}</a>
                 </td>
+                <td className="num-text">{c.phone ?? '—'}</td>
               </tr>
             ))}
           </tbody>
