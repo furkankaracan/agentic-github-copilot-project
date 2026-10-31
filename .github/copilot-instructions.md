@@ -113,7 +113,7 @@ If two sources disagree:
 - Call `Date.now()`, `new Date()` or `Math.random()` inside a domain function — use the injected `DomainContext`.
 - Add a backend, database, `fetch` call, `localStorage` persistence, UI library or CSS framework.
 - Hand-edit `package-lock.json`, `dist/`, or `coverage/` — use `npm` and the build.
-- Delete or renumber existing seed records (`acc-001`, `opp-008`, …) — tests and the demo script reference them.
+- Delete or renumber existing seed records (`acc-001`, `opp-008`, …) — tests and learning exercises reference them.
 - Delete files, or stage deletions, without explicit written consent from the user.
 - "Improve" formatting or refactor unrelated code as part of an in-scope change.
 - Approve, merge, or post review comments on a pull request on a human's behalf.

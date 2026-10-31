@@ -2,7 +2,8 @@
   "name": "contoso-crm",
   "private": true,
   "version": "0.1.0",
-  "description": "Demo CRM (Accounts, Contacts, Opportunities, Orders) used to showcase agentic development with GitHub Copilot.",
+  "description": "Sample CRM (Accounts, Contacts, Opportunities, Orders) for hands-on agentic development with GitHub Copilot.",
+  "license": "MIT",
   "type": "module",
   "engines": {
     "node": ">=20"

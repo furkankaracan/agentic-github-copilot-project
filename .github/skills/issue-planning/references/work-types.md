@@ -37,5 +37,5 @@
 
 - Designing a new stage/status without updating labels, badge CSS and the skill.
 - Putting "only when won" checks in a component instead of asking the domain.
-- Editing existing seed records to make a demo work.
+- Editing existing seed records to make a verification scenario work.
 - Forgetting that the dashboard "Open pipeline" must equal the by-stage table sum.

@@ -14,5 +14,5 @@ Turn this idea into a GitHub issue for Contoso CRM: **${input:idea:describe the 
    - User story: "As a <role>, I want <capability> so that <benefit>."
    - Acceptance criteria: numbered, each one testable, each naming the exact UI label or domain rule.
    - Out of scope.
-   - Demo data: which seed ids show the change.
+   - Sample data: which seed ids show the change.
 3. Show me the draft. Create it on GitHub only after I say "create it" — use `gh issue create --title "<title>" --body-file <tmp file> --label <feature|bug>` (the GitHub MCP server here is read-only) — then reply with the issue URL.

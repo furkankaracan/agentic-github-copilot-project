@@ -13,7 +13,7 @@ import {
 /**
  * Static demo data. The app has no backend: this snapshot is loaded into memory on start
  * and every change is lost on page reload. Extend it when a feature needs new sample
- * records; never delete or renumber existing ids (tests and demo scripts reference them).
+ * records; never delete or renumber existing ids (tests and learning exercises reference them).
  */
 
 const accounts: Account[] = [

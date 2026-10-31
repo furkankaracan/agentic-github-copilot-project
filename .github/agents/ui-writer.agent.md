@@ -41,7 +41,7 @@ Run `npm run dev`, open `http://localhost:5173`, walk the happy path and one err
 ## Final report
 
 1. Files changed and what each screen now does.
-2. Exact manual demo steps (route, click, expected result).
+2. Exact manual verification steps (route, click, expected result).
 3. Test evidence (red → green) and `npm run verify` summary.
 4. Missing domain pieces and observations — not fixed.
 5. The pull request URL — or, inside a `feature-lead` pipeline, "ready for PR" until the lead asks you to open it.
